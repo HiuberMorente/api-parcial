@@ -2,9 +2,6 @@ from typing import List
 
 import databases
 import sqlalchemy
-import os
-import urllib.parse
-import datetime
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -202,9 +199,9 @@ async def startup():
 async def shutdown():
     await database.disconnect()
 
-@app.get("/")
+@app.root_path("/")
 def home():
-    return {"message": "API segundo parcial"}
+    return {"message": "API segundo parcial. Agregar /docs, al url principal"}
 
 # USUARIOS
 
