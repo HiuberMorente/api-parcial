@@ -199,7 +199,7 @@ async def startup():
 async def shutdown():
     await database.disconnect()
 
-@app.root_path("/")
+@app.get("/")
 def home():
     return {"message": "API segundo parcial. Agregar /docs, al url principal"}
 
