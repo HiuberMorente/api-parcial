@@ -13,21 +13,8 @@ from pydantic import BaseModel
 
 from sqlalchemy import ForeignKey
 
-hostServer = os.environ.get('host_serv', 'localhost')
-dbServerPort = urllib.parse.quote_plus(str(os.environ.get('db_server_port', '5432')))
-dbName = os.environ.get('database_name', 'API-parcial')
-dbUserName = urllib.parse.quote_plus(str(os.environ.get('db_username', 'postgres')))
-dbPassword = urllib.parse.quote_plus(str(os.environ.get('db_password', 'root1234')))
-sslMode = urllib.parse.quote_plus(str(os.environ.get('ssl_mode', 'prefer')))
 
-DATABASE_URL = 'postgresql://{}:{}@{}:{}/{}?sslmode={}'.format(
-    dbUserName,
-    dbPassword,
-    hostServer,
-    dbServerPort,
-    dbName,
-    sslMode
-)
+DATABASE_URL = 'postgres://jjkwatpehgrkax:bdf1e33615ab7192e6b1b3aa17c4dd98450d6055f8ad19ff5c02bde9fdd8b6a5@ec2-52-72-34-184.compute-1.amazonaws.com:5432/d4i3g98fd14u7k'
 
 database = databases.Database(DATABASE_URL)
 
