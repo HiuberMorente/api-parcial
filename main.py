@@ -215,6 +215,9 @@ async def startup():
 async def shutdown():
     await database.disconnect()
 
+@app.get("/")
+def home():
+    return {"message": "API segundo parcial"}
 
 # USUARIOS
 
